@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import logo_1 from "@/assets/img/logo/logo.png";
-import logo_2 from "@/assets/img/logo/logo-white.png";
+import logo_1 from "@/assets/img/logo/Park_IT_400x400_bg_transparent_clearWithoutSlogan_txtDark.png";
+import logo_2 from "@/assets/img/logo/Park_IT_400x400_bg_transparent_clearWithoutSlogan_txtDark.png";
 import { CloseThree, CloseTwo } from "../svg";
 import Link from "next/link";
 import MobileMenusTwo from "./mobile-menus-2";
+import contacts_data from "@/data/contacts-data";
 
 // prop type
 type IProps = {
@@ -65,9 +66,9 @@ export default function MobileOffcanvasTwo({openOffcanvas,setOpenOffcanvas}:IPro
                 <a href="tel:61404093954">+61404093 954</a>
               </div>
               <div className="tpoffcanvas__mail">
-                <a href="mailto:hellocontact@diego.com">
-                  hello contact@diego.com
-                </a>
+                <Link href={`mailto:${contacts_data.map((contact) => {return contact.email_address})}`}>
+                  {contacts_data.map((contact) => {return contact.email_address})}
+                </Link>
               </div>
               <div className="tpoffcanvas__text">
                 <p>If in doubt. reach out.</p>

@@ -14,6 +14,7 @@ import ContactLocation from "@/components/contact/contact-location";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation } from "@/utils/title-animation";
+import contacts_data from "@/data/contacts-data";
 
 const ContactMain = () => {
   useScrollSmooth();
@@ -47,7 +48,9 @@ const ContactMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
+                        <span className="tm-hero-subtitle">
+                        {contacts_data.map((contact) => {return contact.company_name})}
+                         &nbsp;Studio</span>
                         <h4 className="tm-hero-title-big tp-char-animation">
                           Get in touch
                         </h4>

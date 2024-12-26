@@ -16,6 +16,7 @@ import FooterTwo from "@/layouts/footers/footer-two";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { hoverBtn } from "@/utils/hover-btn";
 import { brandAnimation } from "@/utils/brand-anim";
+import contacts_data from "@/data/contacts-data";
 
 const BrandMain = () => {
   useScrollSmooth();
@@ -52,7 +53,9 @@ const BrandMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
+                        <span className="tm-hero-subtitle">
+                    {contacts_data.map((contact) => {return contact.company_name})}
+                        &nbsp; Studio</span>
                         <h4 className="tm-hero-title tp-char-animation">
                           Our Sponsors
                         </h4>

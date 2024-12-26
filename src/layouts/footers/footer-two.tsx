@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/img/logo/logo-white.png";
-import logo_2 from "@/assets/img/logo/logo.png";
+import logo from "@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png";
+import logo_2 from "@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png";
 import { RightArrow } from "@/components/svg";
+import contacts_data from "@/data/contacts-data";
 
 // prop type
 type IProps = {
@@ -67,21 +68,29 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
                 <div className="tp-footer-2-contact-item">
                   <span>
                     <a
-                      href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu"
-                      target="_blank"
+                        href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
+                        target="_blank"
                     >
-                      740 NEW SOUTH HEAD RD, TRIPLE BAY SWFW 3108, NEW YORK
-                    </a>
+                              {contacts_data.map((contact) => {
+                                return contact.locale_address
+                              })}
+                            </a>
                   </span>
                 </div>
                 <div className="tp-footer-2-contact-item">
                   <span>
-                    <a href="tel:+725214456">P: + 725 214 456</a>
+                    <Link href={`tel:${contacts_data.map((contact) => {
+                      return contact.phone_number
+                    })}`}>
+                              P: {contacts_data.map((contact) => {return contact.phone_number})}
+                            </Link>
                   </span>
                 </div>
                 <div className="tp-footer-2-contact-item">
                   <span>
-                    <a href="mailto:contact@liko.com">E: contact@liko.com</a>
+                    <Link href={`mailto:${contacts_data.map((contact) => {return contact.email_address})}`}>
+                              E: {contacts_data.map((contact) => {return contact.email_address})}
+                            </Link>
                   </span>
                 </div>
               </div>
@@ -117,7 +126,10 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
             <div className="col-xl-4 col-lg-5">
               <div className="tp-copyright-2-left text-center text-lg-start">
                 <p>
-                  All rights reserved — {new Date().getFullYear()} © Themepure
+                  All rights reserved — {new Date().getFullYear()} © &nbsp;
+                  <Link href={`${contacts_data.map((contact) => {return contact.website_link})}`}>
+                    {contacts_data.map((contact) => {return contact.company_name})}
+                  </Link>
                 </p>
               </div>
             </div>

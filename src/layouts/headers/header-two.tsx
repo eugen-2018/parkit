@@ -25,7 +25,7 @@ export default function HeaderTwo() {
                 <div className="tp-header-logo">
                   <Link className="logo-1" href="/">
                     <Image
-                      src="/assets/img/logo/logo.png"
+                      src="/assets/img/logo/Park_IT_400x400_bg_transparent_clearWithoutSlogan_txtDark.png"
                       alt="logo"
                       width={85}
                       height={26}
@@ -33,7 +33,7 @@ export default function HeaderTwo() {
                   </Link>
                   <Link className="logo-2" href="/">
                     <Image
-                      src="/assets/img/logo/logo-white.png"
+                      src="/assets/img/logo/Park_IT_400x400_bg_transparent_clearWithoutSlogan_txtDark.png"
                       alt="logo"
                       width={85}
                       height={26}

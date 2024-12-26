@@ -2,9 +2,10 @@
 import React from 'react';
 import Image from 'next/image';
 import LineTextThree from '@/components/line-text/line-text-3';
-import logo from '@/assets/img/logo/logo-white.png';
+import logo from '@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png';
 import { RightArrow } from '@/components/svg';
 import Link from 'next/link';
+import contacts_data from "@/data/contacts-data";
 
 export default function FooterThree() {
   return (
@@ -68,13 +69,32 @@ export default function FooterThree() {
               <div className="tp-footer-2-widget footer-col-2-3">
                 <h4 className="tp-footer-2-widget-title">Office</h4>
                 <div className="tp-footer-2-contact-item">
-                  <span><a href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu" target="_blank">740 NEW SOUTH HEAD RD, TRIPLE BAY SWFW 3108, NEW YORK</a></span>
+                  <span>
+                    <a
+                        href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
+                        target="_blank"
+                    >
+                              {contacts_data.map((contact) => {
+                                return contact.locale_address
+                              })}
+                            </a>
+                  </span>
                 </div>
                 <div className="tp-footer-2-contact-item">
-                  <span><a href="tel:+725214456">P: + 725 214 456</a></span>
+                  <span>
+                    <Link href={`tel:${contacts_data.map((contact) => {
+                      return contact.phone_number
+                    })}`}>
+                              P: {contacts_data.map((contact) => {return contact.phone_number})}
+                            </Link>
+                  </span>
                 </div>
                 <div className="tp-footer-2-contact-item">
-                  <span><a href="mailto:contact@liko.com">E: contact@liko.com</a></span>
+                  <span>
+                    <Link href={`mailto:${contacts_data.map((contact) => {return contact.email_address})}`}>
+                              E: {contacts_data.map((contact) => {return contact.email_address})}
+                            </Link>
+                  </span>
                 </div>
               </div>
             </div>
@@ -101,7 +121,11 @@ export default function FooterThree() {
           <div className="row align-items-center">
             <div className="col-xl-4 col-lg-5">
               <div className="tp-copyright-2-left text-center text-lg-start">
-                <p>All rights reserved — {new Date().getFullYear()} © Themepure</p>
+                <p>All rights reserved — {new Date().getFullYear()} ©
+                  <Link href={`${contacts_data.map((contact) => {return contact.website_link})}`}>
+                    {contacts_data.map((contact) => {return contact.company_name})}
+                  </Link>
+                </p>
               </div>
             </div>
             <div className="col-xl-8 col-lg-7">

@@ -14,6 +14,7 @@ import FaqAreaTwo from "@/components/faq/faq-area-2";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
+import contacts_data from "@/data/contacts-data";
 
 const PricingMain = () => {
   useScrollSmooth();
@@ -48,7 +49,9 @@ const PricingMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
+                        <span className="tm-hero-subtitle">
+                        {contacts_data.map((contact) => {return contact.company_name})}
+                        &nbsp; Studio</span>
                         <h4 className="tm-hero-title tp-char-animation">
                           Pricing Plans
                         </h4>

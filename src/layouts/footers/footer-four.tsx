@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import logo from '@/assets/img/logo/logo-white.png';
+import logo from '@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png';
 import { RightArrow, SvgBgSm } from '@/components/svg';
 import Link from 'next/link';
+import contacts_data from "@/data/contacts-data";
 
 export default function FooterFour() {
   return (
@@ -51,7 +52,11 @@ export default function FooterFour() {
                     <Image src={logo} alt="logo" />
                   </Link>
                   <p className="tp-footer-3-copyright">
-                    {new Date().getFullYear()} Themepure <br /> © All rights reserved
+                    {new Date().getFullYear()}
+                    <Link href={`${contacts_data.map((contact) => {return contact.website_link})}`}>
+                      {contacts_data.map((contact) => {return contact.company_name})}
+                    </Link>
+                    <br /> © All rights reserved
                   </p>
                 </div>
               </div>
@@ -62,13 +67,29 @@ export default function FooterFour() {
                   <h4 className="tp-footer-3-title">Contact</h4>
                   <div className="tp-footer-2-contact-item">
                     <span>
-                      <a href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu"
-                      target="_blank">740 NEW SOUTH HEAD RD, TRIPLE BAY SWFW 3108, NEW YORK</a>
+                      <a
+                          href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
+                          target="_blank"
+                      >
+                              {contacts_data.map((contact) => {
+                                return contact.locale_address
+                              })}
+                            </a>
                       </span>
                   </div>
                   <div className="tp-footer-2-contact-item">
-                    <span>P: <a href="tel:+725214456">+ 725 214 456</a></span>
-                    <span>E: <a href="mailto:contact@liko.com">contact@liko.com</a></span>
+                    <span>P: <Link href={`tel:${contacts_data.map((contact) => {
+                      return contact.phone_number
+                    })}`}>
+                              {contacts_data.map((contact) => {return contact.phone_number})}
+                            </Link></span>
+                    <span>E:
+                    <Link href={`mailto:${contacts_data.map((contact) => {
+                      return contact.email_address
+                    })}`}>
+                              {contacts_data.map((contact) => {return contact.email_address})}
+                            </Link>
+                    </span>
                   </div>
                 </div>
                 <div className="tp-footer-3-widget">

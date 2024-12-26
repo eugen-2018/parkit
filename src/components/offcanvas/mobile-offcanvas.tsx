@@ -3,12 +3,14 @@ import Image from "next/image";
 import { Behance, CloseTwo, Dribble, InstagramTwo, Youtube } from "../svg";
 
 // images
-import logo from "@/assets/img/logo/logo.png";
+import logo from "@/assets/img/logo/Park_IT_400x400_bg_transparent_clearWithoutSlogan_txtDark.png";
 import gallery_1 from "@/assets/img/menu/offcanvas/offcanvas-1.jpg";
 import gallery_2 from "@/assets/img/menu/offcanvas/offcanvas-2.jpg";
 import gallery_3 from "@/assets/img/menu/offcanvas/offcanvas-3.jpg";
 import gallery_4 from "@/assets/img/menu/offcanvas/offcanvas-4.jpg";
 import MobileMenus from "./mobile-menus";
+import contacts_data from "@/data/contacts-data";
+import Link from "next/link";
 
 const gallery_images = [gallery_1, gallery_2, gallery_3, gallery_4];
 
@@ -64,13 +66,26 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
 
               <ul>
                 <li>
-                  <a href="tel:1245654">+ 4 20 7700 1007</a>
+                  <Link href={`tel:${contacts_data.map((contact) => {
+                    return contact.phone_number
+                  })}`}>
+                    {contacts_data.map((contact) => {return contact.phone_number})}
+                  </Link>
                 </li>
                 <li>
-                  <a href="mailto:hello@diego.com">hello@diego.com</a>
+                  <Link href={`mailto:${contacts_data.map((contact) => {return contact.email_address})}`}>
+                    {contacts_data.map((contact) => {return contact.email_address})}
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Avenue de Roma 158b, Lisboa</a>
+                  <a
+                      href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
+                      target="_blank"
+                  >
+                    {contacts_data.map((contact) => {
+                      return contact.locale_address
+                    })}
+                  </a>
                 </li>
               </ul>
             </div>
@@ -78,7 +93,7 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
               <h3 className="tp-offcanvas-title sm">Follow Us</h3>
               <ul>
                 <li>
-                  <a href="#"><InstagramTwo /></a>
+                  <a href="#"><InstagramTwo/></a>
                 </li>
                 <li>
                   <a href="#"><Dribble /></a>

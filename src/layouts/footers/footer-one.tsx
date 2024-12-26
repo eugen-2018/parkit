@@ -2,8 +2,10 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from '@/assets/img/logo/logo-white.png';
+import logo from '@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png';
 import { footerOneAnimation, footerTwoAnimation } from "@/utils/footer-anim";
+import contacts_data from "@/data/contacts-data"
+import menu_data from "@/data/menu-data";
 
 const footer_links = [
   { link: "/portfolio-details-1", title: "Projects" },
@@ -53,16 +55,16 @@ export default function FooterOne() {
                         </h4>
                         <div className="tp-footer-widget-info">
                           <div className="tp-footer-widget-info-mail tp_fade_bottom">
-                            <a href="mailto:contact@agency.com">
-                              contact@agency.com
-                            </a>
+                            <Link href={`mailto:${contacts_data.map((contact) => {return contact.email_address})}`}>
+                              {contacts_data.map((contact) => {return contact.email_address})}
+                            </Link>
                           </div>
                           <div className="tp-footer-widget-info-location tp_fade_bottom">
                             <a
                               href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
                               target="_blank"
                             >
-                              389 Street St. <br /> San Francisco,CA
+                              {contacts_data.map((contact) => {return contact.locale_address})}
                             </a>
                           </div>
                         </div>
@@ -111,7 +113,11 @@ export default function FooterOne() {
               <div className="col-xl-6 col-md-8">
                 <div className="tp-copyright-text text-center text-md-end">
                   <p>
-                    Copyright © {new Date().getFullYear()} Themepure. All rights
+                    Copyright © {new Date().getFullYear()} &nbsp;
+                    <Link href={`${contacts_data.map((contact) => {return contact.website_link})}`}>
+                    {contacts_data.map((contact) => {return contact.company_name})}
+                  </Link>
+                    . All rights
                     reserved.
                   </p>
                 </div>

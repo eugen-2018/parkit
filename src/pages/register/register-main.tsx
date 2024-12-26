@@ -32,11 +32,11 @@ const RegisterMain = () => {
                   <div className="col-xl-6 col-lg-8">
                     <div className="tp-login-wrapper">
                       <div className="tp-login-top text-center mb-30">
-                        <h3 className="tp-login-title">Sign Up Liko.</h3>
+                        <h3 className="tp-login-title">Înscrieți-vă .</h3>
                         <p>
                           Don’t have an account?{" "}
                           <span>
-                            <Link href="/login">Sign In</Link>
+                            <Link href="/login">Login</Link>
                           </span>
                         </p>
                       </div>

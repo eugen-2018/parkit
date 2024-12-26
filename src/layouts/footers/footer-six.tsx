@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Email, Location } from "@/components/svg";
-import logo from "@/assets/img/logo/logo-white.png";
+import logo from "@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png";
 import payment from "@/assets/img/inner-shop/payment.png";
 import social_data from "@/data/social-data";
+import contacts_data from "@/data/contacts-data";
 
 export default function FooterSix() {
   return (
@@ -23,7 +24,11 @@ export default function FooterSix() {
                   <div className="tp-footer-6-talk">
                     <span>Got Questions? Call us</span>
                     <h4>
-                      <a href="tel:+67041390762">+670 413 90 762</a>
+                      <Link href={`tel:${contacts_data.map((contact) => {
+                        return contact.phone_number
+                      })}`}>
+                        {contacts_data.map((contact) => {return contact.phone_number})}
+                      </Link>
                     </h4>
                   </div>
                   <div className="tp-footer-6-contact">
@@ -34,7 +39,9 @@ export default function FooterSix() {
                         </span>
                       </div>
                       <div className="tp-footer-6-contact-content">
-                        <a href="mailto:liko@gmail.com">liko@gmail.com</a>
+                        <Link href={`mailto:${contacts_data.map((contact) => {return contact.email_address})}`}>
+                          {contacts_data.map((contact) => {return contact.email_address})}
+                        </Link>
                       </div>
                     </div>
                     <div className="tp-footer-6-contact-item d-flex align-items-start">
@@ -44,10 +51,13 @@ export default function FooterSix() {
                         </span>
                       </div>
                       <div className="tp-footer-6-contact-content">
-                        <a href="https://www.google.com/maps" target="_blank">
-                          79 Sleepy Hollow St.
-                          <br />
-                          Jamaica, New York 1432
+                        <a
+                            href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
+                            target="_blank"
+                        >
+                          {contacts_data.map((contact) => {
+                            return contact.locale_address
+                          })}
                         </a>
                       </div>
                     </div>
@@ -119,7 +129,10 @@ export default function FooterSix() {
               <div className="col-xl-4 col-lg-5 col-md-6">
                 <div className="tp-copyright-2-left text-center text-md-start">
                   <p className="mb-0">
-                    All rights reserved — {new Date().getFullYear()} © Themepure
+                    All rights reserved — {new Date().getFullYear()} ©
+                    <Link href={`${contacts_data.map((contact) => {return contact.website_link})}`}>
+                      {contacts_data.map((contact) => {return contact.company_name})}
+                    </Link>
                   </p>
                 </div>
               </div>

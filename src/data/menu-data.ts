@@ -38,7 +38,7 @@ const menu_data:IMenuDT[] = [
   {
     id: 5,
     title: 'Blog',
-    link: '/blog-modern',
+    link: '/blog-list',
   },
   {
     id: 6,
