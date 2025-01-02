@@ -43,9 +43,9 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
           <div className="tp-offcanvas-main">
             <div className="tp-offcanvas-content">
               <div>
-                <a href="#" onClick={() => changeLanguage('en')}>EN</a>
+                <a href="#" onClick={() => "1"}>EN</a>
                 <br/>
-                <a href="#" onClick={() => changeLanguage('ro')}>RO</a>
+                <a href="#" onClick={() => "2"}>RO</a>
               </div>
               <h3 className="tp-offcanvas-title">Hello There!</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
