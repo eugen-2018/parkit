@@ -21,6 +21,8 @@ import TeamOne from "@/components/team/team-one";
 import TestimonialOne from "@/components/testimonial/testimonial-one";
 import FooterOne from "@/layouts/footers/footer-one";
 
+import { IconCloud } from "@/components/magicui/icon-cloud";
+
 // images
 import shape_1 from '@/assets/img/home-01/footer/footer-circle-shape-1.png';
 import shape_2 from '@/assets/img/home-01/footer/footer-circle-shape-2.png';
@@ -71,6 +73,39 @@ const HomeMain = () => {
     return () => clearTimeout(timer);
   });
 
+// magicui icon cloud slugs
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
   return (
     <Wrapper showBackToTop={false}>
@@ -94,8 +129,11 @@ const HomeMain = () => {
             <HeroBannerOne />
             {/* hero area end */}
 
-
-
+            {/* icon cloud */}
+            <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border bg-background px-20 pb-20 pt-8 ">
+              <IconCloud iconSlugs={slugs} />
+            </div>
+            {/* icon cloud */}
 
             {/* brand area */}
             <BrandOne />

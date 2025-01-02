@@ -26,6 +26,7 @@
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",
     "react-hook-form": "^7.51.5",
+    "react-icon-cloud": "^4.1.6",
     "react-modal-video": "^2.0.1",
     "react-paginate": "^8.2.0",
     "react-range": "^1.8.14",
