@@ -56,14 +56,14 @@ const HeroBannerOne = () => {
                       style={{ height: "auto" }}
                     />
                   </span>
-                  Studio
+                  Company
                 </h1>
               </div>
             </div>
             <div className="tp-hero-content tp_fade_bottom">
               <p>
                 <span></span>
-                Global digital design studio partnering with brands and
+                Global digital design company partnering with brands and
                 businesses that create exceptional experiences. We are design
                 and development agency based in Moldova Republic of.
               </p>
