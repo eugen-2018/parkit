@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeOnePage from "../(homes)/home-1/page";
+import HomeOnePage from "./(homes)/home-1/page";
 // import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function Home() {
       <h1>{t("title")}</h1>
       <p>{t("description")}</p>
     </div> */}
-      {/* <HomeOnePage /> */}
+      <HomeOnePage />
     </>
   );
 }

@@ -15,17 +15,17 @@ import { ReactNode } from "react";
 const gellery = localFont({
   src: [
     {
-      path: "../../../public/assets/fonts/gallerymodern-webfont.ttf",
+      path: "../../public/assets/fonts/gallerymodern-webfont.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/assets/fonts/gallerymodern-webfont.woff",
+      path: "../../public/assets/fonts/gallerymodern-webfont.woff",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/assets/fonts/gallerymodern-webfont.woff2",
+      path: "../../public/assets/fonts/gallerymodern-webfont.woff2",
       weight: "400",
       style: "normal",
     },
@@ -85,9 +85,7 @@ export default async function RootLayout({children, params}: { children: React.R
         suppressHydrationWarning={true}
         className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
       >
-        {/* <NextIntlClientProvider messages={messages}> */}
-          <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
-        {/* </NextIntlClientProvider> */}
+        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
       </body>
     </html>
   );

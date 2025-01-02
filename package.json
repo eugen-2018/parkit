@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,7 +19,6 @@
     "isotope-layout": "^3.0.6",
     "jquery": "^3.7.1",
     "next": "^14.2.3",
-    "next-intl": "^3.26.3",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-bootstrap": "^2.10.2",
