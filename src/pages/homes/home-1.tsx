@@ -95,7 +95,6 @@ const HomeMain = () => {
             {/* hero area end */}
 
             {/* video area */}
-            <VideOne />
             {/* video area */}
 
             {/* brand area */}

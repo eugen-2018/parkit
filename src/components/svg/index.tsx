@@ -34,7 +34,7 @@ import {Minus,Plus} from './plus-minus';
 import Download from "./download";
 import GiftBox from "./gift-box";
 import Orders from "./orders";
-import User from "./user";
+import UserSVG from "./userSVG";
 import Phone from "./phone";
 import Address from "./address";
 import Shipping from "./shipping";
@@ -99,7 +99,7 @@ export {
   WishlistThree,
   LocationTwo,
   Phone,
-  User,
+  UserSVG,
   Address,
   Shipping,
   Close,

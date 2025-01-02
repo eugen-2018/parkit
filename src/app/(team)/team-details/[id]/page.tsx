@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Liko - Team Details page",
 };
 
-export default function TeamDetailsPage({params}: {params: { id: string }}) {
+export default async function TeamDetailsPage(props: {params: Promise<{ id: string }>}) {
+  const params = await props.params;
   const team = [...team_data].find((t) => t.id === Number(params.id));
   return team ? (
     <TeamDetailsMain item={team} />

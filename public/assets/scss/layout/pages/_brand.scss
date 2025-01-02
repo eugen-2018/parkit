@@ -11,9 +11,9 @@
 
 .tp-brand{
     &-area{
-        padding-top: 600px;
+        padding-top: 0px;
         @media #{$xl}{
-            padding-top: 450px;
+            padding-top: 120px;
         }
         @media #{$lg}{
             padding-top: 640px;

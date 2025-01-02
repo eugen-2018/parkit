@@ -1,5 +1,5 @@
 import React from "react";
-import { Email, LocationTwo, Phone, User } from "../svg";
+import { Email, LocationTwo, Phone, UserSVG } from "../svg";
 import NiceSelect from "../ui/nice-select";
 
 export default function PersonalInfoForm() {
@@ -16,7 +16,7 @@ export default function PersonalInfoForm() {
                 defaultValue="Farhan Firoz"
               />
               <span>
-                <User />
+                <UserSVG />
               </span>
             </div>
           </div>

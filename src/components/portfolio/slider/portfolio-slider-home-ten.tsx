@@ -168,7 +168,7 @@ export default function PortfolioSliderHomeTen() {
   const sliderRef = useRef<Slider | null>(null);
 
   return (
-    <div className="tp-portfolio-11-area fix">
+    (<div className="tp-portfolio-11-area fix">
       <div className="tp-portfolio-11-slider-wrap p-relative">
         <Slider
           {...slider_setting_one}
@@ -219,7 +219,9 @@ export default function PortfolioSliderHomeTen() {
           <Slider
             {...slider_setting_two}
             asNavFor={slider1 as Slider}
-            ref={(slider) => setSlider2(slider)}
+            ref={slider => {
+              setSlider2(slider);
+            }}
             afterChange={(index) => setSliderIndex(index + 1)}
             className="tp-portfolio-11-slider-nav-active d-none d-lg-block"
           >
@@ -255,6 +257,6 @@ export default function PortfolioSliderHomeTen() {
           </Slider>
         </div>
       </div>
-    </div>
+    </div>)
   );
 }

@@ -1,3 +1,5 @@
+// Registration form component
+
 import React, {useState} from "react";
 import {useForm} from "react-hook-form"; // Asigură-te că ai importat useForm
 import ErrorMsg from "../error-msg";
@@ -26,7 +28,29 @@ export default function RegisterForm() {
     });
 
     const onSubmit = async (data: any) => {
-        console.error("Submitting data:", data); // Adaugă această linie
+        // console.log("Submitting data:", data); // Adaugă această linie
+        const formData = new FormData();
+        formData.append('name', data.name);
+        formData.append('email', data.email);
+        formData.append('password', data.password);
+        // Adaugă fișiere dacă este necesar
+        // formData.append('file', fileInput.files[0]);
+
+        try {
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                body: formData, // Nu este nevoie să specifici Content-Type
+            });
+            console.log(response)
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            console.log('User registered:', result); // Poți trata răspunsul aici
+        } catch (error) {
+            console.error('Error registering user:', error);
+        }
 
         reset()
     };

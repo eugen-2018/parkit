@@ -64,24 +64,24 @@ const ContactTwoMain = () => {
                   <div className="cn-contactform-2-bg black-bg">
                     <div className="row">
                       <div className="col-xl-6">
-                        <div className="cn-contactform-2-map">
-                          <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d37866.42024631252!2d90.04636289871837!3d23.823039160865342!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1699251079678!5m2!1sen!2sbd"
-                            style={{border:0}}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                          ></iframe>
-                        </div>
+                          <div className="cn-contactform-2-map">
+                              <iframe
+                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.166901703004!2d28.844652875280545!3d47.017328828485155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3c8b58a813%3A0xf5b745949e34d594!2sBusiness%20Center%20FORUM!5e0!3m2!1sen!2s!4v1735292461675!5m2!1sen!2s"
+                                  style={{border: 0}}
+                                  allowFullScreen
+                                  loading="lazy"
+                                  referrerPolicy="no-referrer-when-downgrade">
+                              </iframe>
+                          </div>
                       </div>
-                      <div className="col-xl-6">
-                        <div className="cn-contactform-wrap">
-                          <h4 className="cn-contactform-2-title">
-                            Send a Message
-                          </h4>
-                          <ContactForm btnCls="white-bg" />
+                        <div className="col-xl-6">
+                            <div className="cn-contactform-wrap">
+                                <h4 className="cn-contactform-2-title">
+                                    Send a Message
+                                </h4>
+                                <ContactForm btnCls="white-bg"/>
+                            </div>
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>

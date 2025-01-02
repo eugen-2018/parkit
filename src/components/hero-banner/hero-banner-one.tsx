@@ -65,7 +65,7 @@ const HeroBannerOne = () => {
                 <span></span>
                 Global digital design studio partnering with brands and
                 businesses that create exceptional experiences. We are design
-                and development agency based in Netherland.
+                and development agency based in Moldova Republic of.
               </p>
             </div>
           </div>

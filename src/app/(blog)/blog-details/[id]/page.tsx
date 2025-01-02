@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "Liko - Blog Details page",
 };
 
-export default function BlogDetailsPage({params}:{params:{id:string}}) {
+export default async function BlogDetailsPage(props:{params: Promise<{id:string}>}) {
+  const params = await props.params;
   const blog = [...blog_data].find((blog) => blog.id === Number(params.id));
   return blog ? (
     <BlogDetailsMain blog={blog} />

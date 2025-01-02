@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function User() {
+export default function UserSVG() {
   return (
     <svg
       width="17"

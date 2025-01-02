@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Liko - Shop Details page",
 };
 
-export default function ShopDetailsPage({params}:{params:{id:string}}) {
+export default async function ShopDetailsPage(props:{params: Promise<{id:string}>}) {
+  const params = await props.params;
   const product = [...product_data].find((p) => p.id === Number(params.id));
   return product ? (
     <ShopDetailsMain product={product} />

@@ -37,8 +37,8 @@ const HeaderMenus = () => {
               </div>
             </div>
           ) : menu.pages_mega_menu ? (
-            <div className="tp-submenu submenu tp-mega-menu">
-              <div className="tp-megamenu-wrapper">
+              <div className="tp-submenu submenu tp-mega-menu">
+                <div className="tp-megamenu-wrapper">
                 <div className="row gx-50">
                   <div className="col-xl-8">
                     <div className="tp-megamenu-list-box">

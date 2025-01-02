@@ -1,4 +1,6 @@
 "use client";
+
+// external imports
 import { gsap } from "gsap";
 import React from "react";
 import Link from "next/link";
