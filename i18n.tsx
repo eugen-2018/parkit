@@ -8,53 +8,7 @@ import {locales} from "./config";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 
-    //                                 WITH REQUESTLOCALE.
-    // 
-    // in line below wthout await it gives a promise which contains: 
-    /*
-        [Symbol(kResourceStore)]: {
-            url: { pathname: '/en', search: '' },
-        // This '/en' is dinamically
-    */
-
-    // i need to be THIS VARIABLE AS String with so much more it is used below in import statement 
     
-    /* 
-
-    //                                      THIS IS CODE. 
-
-    ---------->>>>>>>>>> const resolvedLocales = await requestLocale
-
-    console.log(locales)
-    console.log(locales.includes("en"))
-    console.log(resolvedLocales)
-
-    // with await it gives undefined
-    // 
-    // 
-    // change locale to requestLocale.....................
-    */
 
 
 
@@ -74,6 +28,33 @@ import {locales} from "./config";
 
 
 
+//     // 
+//     //                                 WITH REQUESTLOCALE.
+//     // 
+//     // in line below wthout await it gives a promise which contains: 
+//     /*
+//         [Symbol(kResourceStore)]: {
+//             url: { pathname: '/en', search: '' },
+//         // This '/en' is dinamically
+//     */
+
+//     // i need to be THIS VARIABLE AS String with so much more it is used below in import statement 
+    
+//     /* 
+
+//     //                                      THIS IS CODE. 
+
+//     ---------->>>>>>>>>> const resolvedLocales = await requestLocale
+
+//     console.log(locales)
+//     console.log(locales.includes("en"))
+//     console.log(resolvedLocales)
+
+//     // with await it gives undefined
+//     // 
+//     // 
+//     // change locale to requestLocale.....................
+//     */
 
 
 
@@ -81,9 +62,28 @@ import {locales} from "./config";
 
 
 
-    if (!locales.includes(locale as any)) notFound();
 
-    return {
-        messages: (await import(`./messages/${locale}.json`)).default,
-    }
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     if (!locales.includes(locale as any)) notFound();
+
+//     return {
+//         messages: (await import(`./messages/${locale}.json`)).default,
+//     }
+// })
