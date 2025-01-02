@@ -94,8 +94,8 @@ const HomeMain = () => {
             <HeroBannerOne />
             {/* hero area end */}
 
-            {/* video area */}
-            {/* video area */}
+
+
 
             {/* brand area */}
             <BrandOne />
@@ -113,13 +113,25 @@ const HomeMain = () => {
             <AwardOne />
             {/* award area */}
 
+
+
+
+
             {/* team area */}
             <TeamOne />
             {/* team area */}
 
+            
+
+
+
             {/* testimonial area */}
             <TestimonialOne />
             {/* testimonial area */}
+
+            {/* video area */}
+            <VideOne />
+            {/* video area */}  
           </main>
 
           {/* footer area */}
