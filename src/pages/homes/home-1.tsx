@@ -34,6 +34,8 @@ import { hoverBtn } from "@/utils/hover-btn";
 import { footerTwoAnimation } from "@/utils/footer-anim";
 import { bounceAnimation, charAnimation, fadeAnimation } from "@/utils/title-animation";
 
+import GeneralSpacing001510 from "@/components/general/spacing/between-of-main-and-footer-is-html-tag-area-spacing-general-delimiter-height-507px-plus-3px-for-incorporate-video-one-area"
+
 const HomeMain = () => {
   useScrollSmooth();
   useEffect(() => {
@@ -171,6 +173,10 @@ const slugs = [
             <VideOne />
             {/* video area */}  
           </main>
+
+          {/* General Spacing 510px, 507px + 3px, */}
+          <GeneralSpacing001510 />
+          {/* General Spacing 510px, 507px + 3px, */}
 
           {/* footer area */}
           <FooterOne />
