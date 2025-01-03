@@ -6,6 +6,8 @@ import HeaderMenus from "./header-menus";
 import useSticky from "@/hooks/use-sticky";
 import MobileOffcanvas from "@/components/offcanvas/mobile-offcanvas";
 
+import DropdownListDefault from "@/components/language-select-main/dropdown-list-default";
+
 const HeaderOne = () => {
   const {sticky,headerRef,headerFullWidth} = useSticky();
   const [openOffCanvas, setOpenOffCanvas] = React.useState(false);
@@ -22,7 +24,7 @@ const HeaderOne = () => {
           className={`tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9 ${sticky?'header-sticky':''}`}
         >
           <div className="container">
-            <div className="row align-items-center">
+            <div className="row align-items-center justify-content-between">
               <div className="col-xl-2 col-lg-2 col-6">
                 <div className="tp-header-logo">
                   <Link className="logo-1" href="/">
@@ -43,7 +45,7 @@ const HeaderOne = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-xl-9 col-lg-9 d-none d-xl-block" style={{marginLeft: "-58px"}}>
+              <div className="col-xl-8 col-lg-9 d-none d-xl-block" style={{marginLeft: "-58px"}}>
                 <div className="tp-header-menu header-main-menu text-center">
                   <nav className="tp-main-menu-content">
                     {/* header menus */}
@@ -51,6 +53,9 @@ const HeaderOne = () => {
                     {/* header menus */}
                   </nav>
                 </div>
+              </div>
+              <div className="col-xl-1 col-lg-1 col-md-1 col-1">
+                <DropdownListDefault />
               </div>
               <div className="col-xl-1 col-lg col-6">
                 <div className="tp-header-bar text-end">
