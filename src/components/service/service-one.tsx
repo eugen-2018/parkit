@@ -10,45 +10,70 @@ import s_4 from "@/assets/img/home-01/service/service-icon-4.png";
 
 // service data
 const service_data = [
-  {
-    id: 1,
-    title: "VIDEO CREATION",
-    desc: "Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum est ultricies integer quis auctor elit sed.",
-    icon: s_1,
-  },
-  {
-    id: 2,
-    title: "ART DIRECTION",
-    desc: "Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum est ultricies integer quis auctor elit sed.",
-    icon: s_2,
-  },
-  {
-    id: 3,
-    title: "MOTION DESIGN",
-    desc: "Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum est ultricies integer quis auctor elit sed.",
-    icon: s_3,
-  },
-  {
-    id: 4,
-    title: "BRAND STRATEGY",
-    desc: "Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum est ultricies integer quis auctor elit sed.",
-    icon: s_4,
-  },
+  { id: 1, title: "VIDEO CREATION" },
+  { id: 2, title: "ART DIRECTION" },
+  { id: 3, title: "MOTION DESIGN" },
+  { id: 4, title: "BRAND STRATEGY" },
 ];
-return (
-  <div>
-    {service_data.map((service) => (
-      <div key={service.id} className="tp-service-left-btn tp-btn-bounce">
-        <Link className="tp-btn-border" href={`/service/${service.id}`}>
-          <span className="tp-btn-border-wrap">
-            <span className="text-1">{service.title}</span>
-            <span className="text-2">{service.title}</span>
-          </span>
-        </Link>
-      </div>
-    ))}
-  </div>
-);
+
+const ServiceTitles = () => {
+  const buttonStyles = {
+    position: 'relative',
+    display: 'inline-block',
+    overflow: 'hidden',
+    margin: '10px',
+  };
+
+  const borderStyles = {
+    display: 'inline-block',
+    position: 'relative',
+    textDecoration: 'none',
+  };
+
+  const wrapStyles = {
+    display: 'block',
+    position: 'relative',
+    overflow: 'hidden',
+  };
+
+  const textStyles = {
+    display: 'block',
+    padding: '10px',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#000',
+    transition: 'transform 0.3s ease',
+  };
+
+  const hoverText1 = {
+    transform: 'translateY(0)',
+  };
+
+  const hoverText2 = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    transform: 'translateY(100%)',
+  };
+
+  return (
+    <div>
+      {service_data.map(service => (
+        <div key={service.id} style={buttonStyles}>
+          <a style={borderStyles} href={`/service/${service.id}`}>
+            <span style={wrapStyles}>
+              <span style={{...textStyles, ...hoverText1}}>{service.title}</span>
+              <span style={{...textStyles, ...hoverText2}}>{service.title}</span>
+            </span>
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ServiceTitles;
+
 
 const ServiceOne = () => {
   return (
