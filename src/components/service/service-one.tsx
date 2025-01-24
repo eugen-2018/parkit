@@ -35,6 +35,20 @@ const service_data = [
     icon: s_4,
   },
 ];
+return (
+  <div>
+    {service_data.map((service) => (
+      <div key={service.id} className="tp-service-left-btn tp-btn-bounce">
+        <Link className="tp-btn-border" href={`/service/${service.id}`}>
+          <span className="tp-btn-border-wrap">
+            <span className="text-1">{service.title}</span>
+            <span className="text-2">{service.title}</span>
+          </span>
+        </Link>
+      </div>
+    ))}
+  </div>
+);
 
 const ServiceOne = () => {
   return (
