@@ -43,7 +43,7 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
                 )}
                 <div className="tp-footer-2-widget-text">
                   <p>
-                    Drop us a line sed id semper <br /> risus in hend rerit.
+                  We speak the language <br/> of your business!
                   </p>
                 </div>
               </div>

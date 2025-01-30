@@ -37,7 +37,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/utils/scroll-magic.js"
-  ],
+, "src/i18n.mjs", "src/i18n/request.js", "src/i18n/routing.js"  ],
   "exclude": [
     "node_modules"
   ]

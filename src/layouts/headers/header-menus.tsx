@@ -1,15 +1,18 @@
 import React, { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import menu_data from "@/data/menu-data";
-
+import { useTranslations } from "next-intl";
+import { useGetMenuData } from "@/data/menu-data";
 const imgStyle:CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
 const HeaderMenus = () => {
+  const t = useTranslations("navbar");
+  const {menu_data } = useGetMenuData();
+
   return (
     <ul>
       {menu_data.map((menu) => (
         <li key={menu.id} className="has-dropdown">
-          <Link href={menu.link}>{menu.title}</Link>
+          <Link href={menu.link}>{t(menu.title)}</Link>
           {menu.home_menus ? (
             <div className="tp-submenu submenu tp-mega-menu">
               <div className="tp-menu-fullwidth">
@@ -53,7 +56,7 @@ const HeaderMenus = () => {
                                 {menu.pages_mega_menu.first.submenus.map(
                                   (psm,i) => (
                                     <li key={i}>
-                                      <Link href={psm.link}>{psm.title}</Link>
+                                      <Link href={psm.link}>{t(`${psm.title}`)}</Link>
                                     </li>
                                   )
                                 )}

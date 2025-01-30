@@ -5,7 +5,7 @@ import Link from "next/link";
 import logo from '@/assets/img/logo/Park_IT_400x400_bg_transparent_withSlogan_txtDark.png';
 import { footerOneAnimation, footerTwoAnimation } from "@/utils/footer-anim";
 import contacts_data from "@/data/contacts-data"
-import menu_data from "@/data/menu-data";
+import {useGetMenuData} from "@/data/menu-data";
 
 const footer_links = [
   { link: "/portfolio-details-1", title: "Projects" },
@@ -15,6 +15,7 @@ const footer_links = [
   { link: "/contact", title: "Contact" },
 ];
 export default function FooterOne() {
+  const {menu_data} = useGetMenuData()
   const [isActive, setIsActive] = React.useState(false);
   useEffect(() => {
     footerOneAnimation();
@@ -45,7 +46,9 @@ export default function FooterOne() {
               <div className="col-xl-5 col-lg-6">
                 <div className="tp-footer-middle-wrap">
                   <div className="tp-footer-content">
+                  <Link href="/contact">
                     <h4 className="tp-footer-big-title footer-big-text">{"Let's"} Contact!</h4>
+                            </Link>
                   </div>
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">

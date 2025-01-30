@@ -45,8 +45,7 @@ export default function FooterFour() {
               <div className="tp-footer-3-widget text-md-center footer-col-3-2">
                 <div className="tp-footer-3-logo-box">
                   <p className="mb-100">
-                    Drop us a line sed id semper <br />
-                    risus in hend rerit.
+                  We speak the language <br/> of your business!
                   </p>
                   <Link className="tp-footer-3-logo p-relative" href="/">
                     <Image src={logo} alt="logo" />

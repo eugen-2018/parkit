@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Hand } from "../svg";
-
+import { useTranslations } from "next-intl";
 // images
 import shape from "@/assets/img/inner-about/about/shape-1.png";
 import ab_1 from "@/assets/img/inner-about/about/about-1.jpg";
@@ -9,6 +9,8 @@ import ab_2 from "@/assets/img/inner-about/about/about-3.jpg";
 import ab_3 from "@/assets/img/inner-about/about/about-2.jpg";
 
 export default function AboutUsArea() {
+  const t = useTranslations("aboutuspage");
+
   return (
     <div className="ab-about-area ab-about-mt pb-90 z-index-5">
       <div className="container container-1480">
@@ -51,10 +53,7 @@ export default function AboutUsArea() {
                 Hi!
               </span>
               <p className="tp-dropcap tp_fade_bottom">
-                We are a creative studio that specializes in providing
-                high-quality design and branding solutions to businesses and
-                individuals. Our team is composed of talented designers,
-                developers, and marketers.!
+                {t("aboutustext")}
               </p>
             </div>
           </div>

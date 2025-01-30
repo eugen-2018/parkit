@@ -10,76 +10,38 @@ import s_4 from "@/assets/img/home-01/service/service-icon-4.png";
 
 // service data
 const service_data = [
-  { id: 1, title: "VIDEO CREATION" },
-  { id: 2, title: "ART DIRECTION" },
-  { id: 3, title: "MOTION DESIGN" },
-  { id: 4, title: "BRAND STRATEGY" },
+  {
+    id: 1,
+    title: "VIDEO CREATION",
+    desc: "Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum est ultricies integer quis auctor elit sed.",
+    icon: s_1,
+  },
+  {
+    id: 2,
+    title: "Brand & Corporate Identity",
+    desc: "Internal culture, vision, values, and the way it interacts with the outside world. Identity is not the logo or colors; it is the way your brand presents itself and connects with the audience. In a competitive environment, a clear and coherent identity is essential for your business's success!",
+    icon: s_2,
+  },
+  {
+    id: 3,
+    title: "UI/UX & Product Design",
+    desc: "UI (User Interface) and UX (User Experience) are the fundamental pillars of any digital interaction. Whether it's a website, an app, or another digital product, a high-quality UI/UX design ensures an efficient, enjoyable, and action-oriented interaction between users and the brand.",
+    icon: s_3,
+  },
+  {
+    id: 4,
+    title: "BRAND STRATEGY",
+    desc: "Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum est ultricies integer quis auctor elit sed.",
+    icon: s_4,
+  },
 ];
-
-const ServiceTitles = () => {
-  const buttonStyles = {
-    position: 'relative',
-    display: 'inline-block',
-    overflow: 'hidden',
-    margin: '10px',
-  };
-
-  const borderStyles = {
-    display: 'inline-block',
-    position: 'relative',
-    textDecoration: 'none',
-  };
-
-  const wrapStyles = {
-    display: 'block',
-    position: 'relative',
-    overflow: 'hidden',
-  };
-
-  const textStyles = {
-    display: 'block',
-    padding: '10px',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    color: '#000',
-    transition: 'transform 0.3s ease',
-  };
-
-  const hoverText1 = {
-    transform: 'translateY(0)',
-  };
-
-  const hoverText2 = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    transform: 'translateY(100%)',
-  };
-
-  return (
-    <div>
-      {service_data.map(service => (
-        <div key={service.id} style={buttonStyles}>
-          <a style={borderStyles} href={`/service/${service.id}`}>
-            <span style={wrapStyles}>
-              <span style={{...textStyles, ...hoverText1}}>{service.title}</span>
-              <span style={{...textStyles, ...hoverText2}}>{service.title}</span>
-            </span>
-          </a>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default ServiceTitles;
-
 
 const ServiceOne = () => {
   return (
     <div className="tp-service-area pt-180 pb-80 tp-btn-trigger">
       <div className="container container-1630">
         <div className="row">
+          {/* Left Section */}
           <div className="col-xl-6 col-lg-6">
             <div className="tp-service-title-box p-relative">
               <span className="tp-section-subtitle subtitle-position tp_fade_bottom">
@@ -100,21 +62,34 @@ const ServiceOne = () => {
               </Link>
             </div>
           </div>
+
+          {/* Right Section */}
           <div className="col-xl-6 col-lg-6">
             <div className="tp-service-right-wrap">
-              {service_data.map((s, i) => (
+              {service_data.map((service) => (
                 <div
-                  key={s.id}
+                  key={service.id}
                   className="tp-service-item d-flex align-items-start mb-75 tp_fade_bottom"
                 >
+                  {/* Icon */}
                   <div className="tp-service-icon">
-                    <Image src={s.icon} alt="icon" style={{ height: "auto" }} />
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      style={{ height: "auto", maxWidth: "60px" }}
+                    />
                   </div>
-                  <div className="tp-service-content">
-                    <h4 className="tp-service-title-sm order-0">
-                      <Link href="/service-details">{s.title}</Link>
+
+                  {/* Content */}
+                  <div className="tp-service-content ms-3">
+                    <h4 className="tp-service-title-sm">
+                      <Link href="/service-details">
+                        <span className="tp-btn-border tp-title-btn">
+                          {service.title}
+                        </span>
+                      </Link>
                     </h4>
-                    <p className="order-1">{s.desc}</p>
+                    <p>{service.desc}</p>
                   </div>
                 </div>
               ))}
@@ -122,6 +97,27 @@ const ServiceOne = () => {
           </div>
         </div>
       </div>
+
+      {/* Styling */}
+      <style jsx>{`
+        .tp-title-btn {
+          display: inline-block;
+          padding: 10px 20px;
+          border: 2px solid #000;
+          border-radius: 50px;
+          font-size: 18px;
+          text-align: center;
+          font-weight: bold;
+          color: #000;
+          background-color: transparent;
+          transition: all 0.3s ease;
+        }
+
+        .tp-title-btn:hover {
+          background-color: #000;
+          color: #fff;
+        }
+      `}</style>
     </div>
   );
 };

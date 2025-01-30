@@ -11,6 +11,8 @@ import "./globals.scss";
 // import { getMessages } from "next-intl/server";
 // import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
+import { NextIntlClientProvider } from "next-intl";
+
 
 const gellery = localFont({
   src: [
@@ -79,6 +81,7 @@ export default async function RootLayout({children, params}: { children: React.R
   // const { locale } = await params;
 
   return (
+    <NextIntlClientProvider>
     <html lang="en"/*{locale}*/ suppressHydrationWarning={true}>
       <body 
         id="body"
@@ -88,5 +91,6 @@ export default async function RootLayout({children, params}: { children: React.R
         <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
       </body>
     </html>
+    </NextIntlClientProvider>
   );
 }

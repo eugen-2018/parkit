@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import menu_data from "@/data/menu-data";
 import shop_banner from '@/assets/img/menu/shop-menu/banner-1.jpg';
 import port_img from '@/assets/img/menu/portfolio-menu/portfolio.png';
+import {useGetMenuData} from "@/data/menu-data";
 
 export default function MobileMenus() {
   const [navTitle, setNavTitle] = React.useState<string>("");
-
+  const { menu_data } = useGetMenuData()
   //openMobileMenu
   const openMobileMenu = (menu: string) => {
     if (navTitle === menu) {
@@ -16,12 +16,18 @@ export default function MobileMenus() {
       setNavTitle(menu);
     }
   };
+
+  useEffect(() => {
+    console.log("menu_data", menu_data)
+  }, [menu_data])
   return (
     <>
       <nav className="tp-main-menu-content">
         <ul>
-          {menu_data.map((menu) => (
-            <li
+          {menu_data.map((menu) => {
+            console.log("menu", menu)
+            return(
+              <li
               key={menu.id}
               className={`has-dropdown ${
                 menu.home_menus || menu.portfolio_mega_menus
@@ -29,12 +35,19 @@ export default function MobileMenus() {
                   : ""
               } ${menu.home_menus ? "dropdown-opened" : ""}`}
             >
-              <a className="pointer" onClick={() => openMobileMenu(menu.title)}>
+              {/* <a className="pointer" onClick={() => openMobileMenu(menu.title)}>
+                {menu.title}
+                <button className="dropdown-toggle-btn">s
+                  <i className="fa-light fa-plus"></i>
+                </button>
+              </a> */}
+
+              <Link className="pointer" href={menu.link}>
                 {menu.title}
                 <button className="dropdown-toggle-btn">
                   <i className="fa-light fa-plus"></i>
                 </button>
-              </a>
+              </Link>
               {menu.home_menus ? (
                 <div className="tp-submenu submenu tp-mega-menu" style={{ display: navTitle === menu.title ? "block" : "none"}}>
                   <div className="tp-menu-fullwidth">
@@ -219,7 +232,8 @@ export default function MobileMenus() {
                 </ul>
               ) : null}
             </li>
-          ))}
+            )
+          })}
         </ul>
       </nav>
     </>

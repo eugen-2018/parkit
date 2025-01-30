@@ -1,0 +1,32 @@
+{
+    "HomePage": {
+        "title": "Liko - Buna ziua",
+        "message": "Aeasta este pagina de index"
+    },
+    "navbar": {
+    "home": "ACASĂ",
+    "portofolio": "PORTOFOLIU",
+    "ourclients": "CLIENȚI",
+    "pricing": "PREȚURI",
+    "blog": "BLOG",
+    "contact": "CONTACT",
+    "aboutus": "DESPRE NOI"
+    
+},
+"hero": { 
+    "kraft": "Creăm site-uri ",
+    "hello": "Hello",
+    "people": "People!",
+    "bring": "care dau ",
+    "vision": "viață viziunii tale",
+    "description": "Ca o companie digitală specializată în dezvoltarea site-urilor web și automatizarea chatbot-urilor cu inteligență artificială, creăm site-uri unice și performante care dau viață ideilor tale online."
+}, 
+"brands": {
+    "clients": "Clienții cu care am lucrat"
+},
+"aboutuspage":{
+    "aboutustext":"Ca o companie digitală inovatoare specializată în dezvoltarea site-urilor web, design și automatizarea chatbot-urilor cu inteligență artificială, creăm site-uri unice și performante care aduc ideile tale la viață online. Prin combinarea designului de ultimă oră cu tehnologiile inovative AI, creăm soluții digitale personalizate care nu doar reflectă identitatea afacerii tale, dar îmbunătățesc și interacțiunea utilizatorilor și eficientizează operațiunile tale. Scopul nostru este să livrăm experiențe excepționale și fluide, care ajută brandurile și afacerea ta să prospere într-o lume digitală. Fie că dorești să îți construiești o prezență online uimitoare sau să automatizezi interacțiunile cu clienții, echipa noastră este aici pentru a transforma viziunea ta în realitate, un pixel la un moment dat."
+
+}
+
+}

@@ -1,6 +1,10 @@
+import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/routing';
 import { Metadata } from "next";
-import HomeOnePage from "./(homes)/home-1/page";
-// import { useTranslations } from "next-intl";
+import HomeOnePage from "./[locale]/homes/home-1/home-1";
+
+
+
 
 export const metadata: Metadata = {
   title: "Liko - Home Page",

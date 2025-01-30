@@ -47,7 +47,7 @@ export default function FooterThree() {
                   </Link>
                 </div>
                 <div className="tp-footer-2-widget-text">
-                  <p>Drop us a line sed id semper <br /> risus in hend rerit.</p>
+                We speak the language <br/> of your business!
                 </div>
               </div>
             </div>

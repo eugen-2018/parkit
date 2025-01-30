@@ -21,6 +21,7 @@ import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-anim
 import { hoverBtn } from "@/utils/hover-btn";
 import { teamMarqueAnim } from "@/utils/scroll-marque";
 
+
 const AboutUsMain = () => {
   useScrollSmooth();
 

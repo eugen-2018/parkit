@@ -1,18 +1,30 @@
-'use client';
+'use client'; 
 import React from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { fadeAnimation } from "@/utils/title-animation";
+import { useTranslations } from "next-intl";
+
+import { Playfair } from 'next/font/google'
+
+//👇 Configure our font object
+const playFair = Playfair({
+  subsets: ['latin'],
+  display: 'swap',
+  
+})
 
 const HeroBannerOne = () => {
+  const t = useTranslations("hero"); // Assuming translations are under the "hero" namespace
+
   useGSAP(() => {
-  
-    if(typeof window !== 'undefined'){
+    if (typeof window !== "undefined") {
       setTimeout(() => {
         fadeAnimation();
-      },100)
+      }, 100);
     }
   }, {});
+
   return (
     <div className="tp-hero-area tp-hero-ptb main-slider">
       <div className="container-fluid">
@@ -30,10 +42,10 @@ const HeroBannerOne = () => {
               </div>
               <div className="tp-hero-title-box text-center p-relative">
                 <h1 className="tp-hero-title tp_fade_bottom">
-                  <span className="p-relative">
-                    Creative
+                  <span className={`p-relative ${playFair.className}`}>
+                    {t("kraft")} {/* Translated "Creative" */}
                     <span className="tp-hero-subtitle d-none d-lg-block ">
-                      Hello <br /> People! We’re
+                      {t("hello")} <br /> {t("people")}
                     </span>
                     <span className="tp-hero-shape-2 d-none d-md-block">
                       <Image
@@ -45,7 +57,7 @@ const HeroBannerOne = () => {
                     </span>
                   </span>
                   <br />
-                  Digital
+                  {t("bring")} {/* Translated "Digital" */}
                   <span className="tp-hero-title-img">
                     <Image
                       className="tp-zoom-img"
@@ -56,16 +68,14 @@ const HeroBannerOne = () => {
                       style={{ height: "auto" }}
                     />
                   </span>
-                  Company
+                  {t("vision")} {/* Translated "Company" */}
                 </h1>
               </div>
             </div>
             <div className="tp-hero-content tp_fade_bottom">
               <p>
                 <span></span>
-                Global digital design company partnering with brands and
-                businesses that create exceptional experiences. We are design
-                and development agency based in Moldova Republic of.
+                {t("description")} {/* Translated description */}
               </p>
             </div>
           </div>
