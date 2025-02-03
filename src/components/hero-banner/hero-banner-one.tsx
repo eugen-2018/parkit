@@ -1,21 +1,21 @@
-'use client'; 
+"use client";
 import React from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { fadeAnimation } from "@/utils/title-animation";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { Playfair } from "next/font/google";
 
-import { Playfair } from 'next/font/google'
-
-//👇 Configure our font object
+// Configure font
 const playFair = Playfair({
-  subsets: ['latin'],
-  display: 'swap',
-  
-})
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const HeroBannerOne = () => {
-  const t = useTranslations("hero"); // Assuming translations are under the "hero" namespace
+  const t = useTranslations("hero");
+  const locale = useLocale(); // Now properly inside the component
 
   useGSAP(() => {
     if (typeof window !== "undefined") {
@@ -23,7 +23,7 @@ const HeroBannerOne = () => {
         fadeAnimation();
       }, 100);
     }
-  }, {});
+  }, []);
 
   return (
     <div className="tp-hero-area tp-hero-ptb main-slider">
@@ -41,10 +41,13 @@ const HeroBannerOne = () => {
                 />
               </div>
               <div className="tp-hero-title-box text-center p-relative">
-                <h1 className="tp-hero-title tp_fade_bottom">
+                <h1
+                  className="tp-hero-title tp_fade_bottom"
+                  //style={{ width: locale === "ru" ? "100%" : "100%" }} 
+                >
                   <span className={`p-relative ${playFair.className}`}>
-                    {t("kraft")} {/* Translated "Creative" */}
-                    <span className="tp-hero-subtitle d-none d-lg-block ">
+                    {t("kraft")}
+                    <span className="tp-hero-subtitle d-none d-lg-block">
                       {t("hello")} <br /> {t("people")}
                     </span>
                     <span className="tp-hero-shape-2 d-none d-md-block">
@@ -57,26 +60,25 @@ const HeroBannerOne = () => {
                     </span>
                   </span>
                   <br />
-                  {t("bring")} {/* Translated "Digital" */}
-                  <span className="tp-hero-title-img">
-                    <Image
-                      className="tp-zoom-img"
-                      src="/assets/img/home-01/hero/hero-1-1.png"
-                      alt="hero-img"
-                      width={270}
-                      height={160}
-                      style={{ height: "auto" }}
-                    />
+                  <span className={`p-relative ${playFair.className}`}>
+                    {t("bring")}
+                    <span className="tp-hero-title-img">
+                      <Image
+                        className="tp-zoom-img"
+                        src="/assets/img/home-01/hero/hero-1-1.png"
+                        alt="hero-img"
+                        width={270}
+                        height={160}
+                        style={{ height: "auto" }}
+                      />
+                    </span>
+                    {t("vision")}
                   </span>
-                  {t("vision")} {/* Translated "Company" */}
                 </h1>
               </div>
             </div>
             <div className="tp-hero-content tp_fade_bottom">
-              <p>
-                <span></span>
-                {t("description")} {/* Translated description */}
-              </p>
+              <p>{t("description")}</p>
             </div>
           </div>
         </div>

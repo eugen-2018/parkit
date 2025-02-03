@@ -5,7 +5,8 @@ import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-
+import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl"; 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
@@ -15,8 +16,12 @@ import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import contacts_data from "@/data/contacts-data";
+import { useTheme } from "next-themes";
+
 
 const PricingMain = () => {
+  const t = useTranslations("pricing");
+  const { theme } = useTheme();
   useScrollSmooth();
 
   useGSAP(() => {
@@ -28,6 +33,7 @@ const PricingMain = () => {
   });
 
   return (
+    
     <Wrapper>
       {/* header area start */}
       <HeaderEleven />
@@ -50,16 +56,18 @@ const PricingMain = () => {
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
                         <span className="tm-hero-subtitle">
-                        {contacts_data.map((contact) => {return contact.company_name})}
-                        &nbsp; Studio</span>
+                          {contacts_data.map((contact) => {
+                            return contact.company_name;
+                          })}
+                          &nbsp; Studio
+                        </span>
                         <h4 className="tm-hero-title tp-char-animation">
-                          Pricing Plans
+                          {t("pricingplans")}
                         </h4>
                       </div>
                       <div className="tm-hero-text">
                         <p className="tp_title_anim">
-                          Choose the right pricing for you and get started{" "}
-                          <br />
+                          {t("chooseplan")} <br />
                           with your project.
                         </p>
                       </div>
@@ -70,11 +78,11 @@ const PricingMain = () => {
               {/* pricing hero */}
 
               {/* pricing area */}
-              <PricingArea/>
+              <PricingArea theme={theme} />
               {/* pricing area */}
 
               {/* faq area */}
-              <FaqAreaTwo/>
+              <FaqAreaTwo />
               {/* faq area */}
             </main>
 
