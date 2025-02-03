@@ -159,7 +159,7 @@ const pricing_data = [
   },
 ];
 
-export default function PricingArea({ theme }: { theme: string }) {
+export default function PricingArea({ theme = "light" }: { theme?: string }) {
   const t = useTranslations("pricing");
 
   return (
