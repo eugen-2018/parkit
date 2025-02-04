@@ -3862,3 +3862,16 @@
         }
     }
 }
+.filter-portfolio {
+    /* Add necessary styles for the container */
+}
+
+.portfolio-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+

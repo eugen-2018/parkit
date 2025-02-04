@@ -5,7 +5,8 @@ import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from "@/plugins";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-
+import Link from "next/link";
+import { useLocale } from "next-intl";
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
@@ -17,6 +18,12 @@ import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { imageRevealAnimation } from "@/utils/image-reveal-anim";
 import { hoverBtn } from "@/utils/hover-btn";
 
+export const useGetMenuData =  () => {
+  const locale = useLocale();
+
+  console.log(locale);
+  const baseLink = `/${locale}`;
+};
 const PortfolioStandardMain = () => {
   useScrollSmooth();
 
@@ -45,13 +52,12 @@ const PortfolioStandardMain = () => {
 
   return (
     <Wrapper>
-
       {/* magic cursor start */}
       <div id="magic-cursor">
         <div id="ball"></div>
       </div>
       {/* magic cursor end */}
-      
+
       {/* header area start */}
       <HeaderEleven />
       {/* header area end */}
@@ -62,23 +68,63 @@ const PortfolioStandardMain = () => {
             {/* portfolio hero */}
             <div
               className="tm-hero-area tm-hero-ptb"
-              style={{ backgroundImage: "url(/assets/img/inner-project/hero/hero-bg.jpg)" }}
+              style={{
+                backgroundImage:
+                  "url(/assets/img/inner-project/hero/hero-bg.jpg)",
+              }}
             >
               <div className="container">
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="tm-hero-content">
-                      <span className="tm-hero-subtitle">Liko Studio</span>
+                      {/* <span className="tm-hero-subtitle">Liko Studio</span> */}
                       <h4 className="tm-hero-title tp-char-animation">
-                        Our latest & great projects
+                        PORTOFOLIO
                       </h4>
                     </div>
                     <div className="tm-hero-text">
-                      <p className="tp_title_anim">
+                      {/* <p className="tp_title_anim">
                         We’re a diverse team that works as fancies attention to
                         details, enjoys beers on Friday nights and aspires to
                         design the dent in the universe.
-                      </p>
+                      </p> */}
+                    </div>
+                    <div className="filter-portofolio">
+                      <Link href="/">
+                       Toate
+                      </Link>
+                      <ul className="portofolio-list" >
+                        <li>
+                        <Link href="/">
+                          Website de prezentare
+                        </Link>
+                        </li>
+                          <li>
+                        <Link href="/">
+                          Landing Page
+                        </Link>
+                        </li>
+                          <li>
+                        <Link href="/">
+                          Blog
+                        </Link>
+                        </li>
+                          <li>
+                        <Link href="/">
+                          E-commerce Website
+                        </Link>
+                        </li>
+                          <li>
+                        <Link href="/">
+                          Marketplace
+                        </Link>
+                        </li>
+                          <li>
+                        <Link href="/">
+                          Forum/Community
+                        </Link>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -91,7 +137,7 @@ const PortfolioStandardMain = () => {
             {/* portfolio area */}
 
             {/* big text */}
-            <BigText/>
+            <BigText />
             {/* big text */}
           </main>
 
